@@ -1,9 +1,1 @@
-const box=document.querySelector('.hearts');
-setInterval(()=>{
- let s=document.createElement('span');
- s.textContent=['❤️','💖','💕','💞','🥰'][Math.floor(Math.random()*5)];
- s.style.left=Math.random()*100+'vw';
- s.style.fontSize=(20+Math.random()*25)+'px';
- box.appendChild(s);
- setTimeout(()=>s.remove(),6000);
-},250);
+const msgs=['💌 Loading a Special Message...','I','I Love','❤️ I LOVE YOU ❤️\n🥹💖🌹🫶🏻💕✨'];let i=0;const t=document.getElementById('text');function step(){if(i>=msgs.length)return;let s=msgs[i],j=0;t.textContent='';let h=setInterval(()=>{t.textContent=s.slice(0,j++);if(j>s.length){clearInterval(h);i++;setTimeout(step,1000)}},70)}step();setInterval(()=>{let d=document.createElement('div');d.className='petal';d.textContent=Math.random()>0.5?'🌹':'❤️';d.style.left=Math.random()*100+'vw';d.style.animationDuration=(4+Math.random()*4)+'s';document.body.appendChild(d);setTimeout(()=>d.remove(),8000)},250);
